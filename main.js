@@ -1,7 +1,7 @@
 import Stage from "./lib/Stage.js";
 import Entity from "./game/Entity.js";
 import Player from "./game/Player.js";
-import { hitTestRectangle, sorting, loadJson, colorsDB } from "./lib/utils.js";
+import { hitTestRectangle, sorting, colorsDB } from "./lib/utils.js";
 
 const init = async () => {
   const response = await fetch("./assets.json");
