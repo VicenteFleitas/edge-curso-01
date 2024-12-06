@@ -3,9 +3,10 @@ import Entity from "./game/Entity.js";
 import Player from "./game/Player.js";
 import { hitTestRectangle, sorting, loadJson, colorsDB } from "./lib/utils.js";
 
-loadJson("../assets.json", init);
+const init = async () => {
+  const response = await fetch("./assets.json");
+  const data = await response.json();
 
-function init(data) {
   let stage = new Stage(0, 0, 512, 512, colorsDB[0]);
   let collisionTiles = [];
   let sortArray = [];
@@ -48,4 +49,6 @@ function init(data) {
     // render
     stage.render();
   }
-}
+};
+
+init();
